@@ -26,9 +26,10 @@ The project files and folders are organized as follows:
 ```
 root                    (project root folder)
 +-- Game                (class source code folder)
++-- Constants           (contains a list of constant variables) 
 +-- Program.cs          (program entry point)    
 +-- README.md           (general info)
-+-- Unit04.csproj       (dotnet project file)
++-- Unit05.csproj       (dotnet project file)
 ```
 
 ## Required Technologies
