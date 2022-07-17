@@ -20,7 +20,8 @@ namespace Unit05.Game.Scripting
             Bike user = (Bike)cast.GetFirstActor("user");
             Bike program = (Bike)cast.GetFirstActor("program");
             HandleCollisionsAction hca = (HandleCollisionsAction)script.GetAction("update", "HCA");
-            bool isGameOver = hca.GetGameOverStatus();
+            GameOver gameOver = (GameOver)cast.GetFirstActor("gameover");
+            bool isGameOver = gameOver.GetGameOverStatus();
 
             if (isGameOver == true)
             {

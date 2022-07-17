@@ -16,7 +16,6 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class HandleCollisionsAction : Action
     {
-        private bool isGameOver = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -28,7 +27,9 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            if (isGameOver == false)
+            GameOver gameOver = (GameOver)cast.GetFirstActor("gameover");
+
+            if (gameOver.GetGameOverStatus() == false)
             {
                 HandleBikeCollisions(cast);
                 HandleSegmentCollisions(cast);
@@ -45,12 +46,13 @@ namespace Unit05.Game.Scripting
             Bike user = (Bike)cast.GetFirstActor("user");
             Actor head = user.GetHead();
             List<Actor> body = user.GetBody();
+            GameOver gameOver = (GameOver)cast.GetFirstActor("gameover");
 
             foreach (Actor segment in body)
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    isGameOver = true;
+                    gameOver.SetGameOverStatus(true);
                 }
             }
 
@@ -62,7 +64,7 @@ namespace Unit05.Game.Scripting
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
-                    isGameOver = true;
+                    gameOver.SetGameOverStatus(true);
                 }
             }
         }
@@ -75,55 +77,29 @@ namespace Unit05.Game.Scripting
             Actor phead = program.GetHead();
             List<Actor> ubody = user.GetBody();
             List<Actor> pbody = program.GetBody();
+            GameOver gameOver = (GameOver)cast.GetFirstActor("gameover");
             
             foreach (Actor segment in ubody)
             if (segment.GetPosition().Equals(phead.GetPosition()))
             {   
-                isGameOver = true;
+                gameOver.SetGameOverStatus(true);
             }
 
             foreach (Actor segment in pbody)
             if (segment.GetPosition().Equals(uhead.GetPosition()))
             {
-                isGameOver = true;
+                gameOver.SetGameOverStatus(true);
             }
         }
 
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver == true)
+            GameOver gameOver = (GameOver)cast.GetFirstActor("gameover");
+
+            if (gameOver.GetGameOverStatus() == true)
             {
-                Bike user = (Bike)cast.GetFirstActor("user");
-                Bike program = (Bike)cast.GetFirstActor("program");
-                List<Actor> user_segments = user.GetSegments();
-                List<Actor> program_segments = program.GetSegments();
-
-                // create a "game over" message
-                int x = (Constants.MAX_X / 2) - 15;
-                int y = Constants.MAX_Y / 2;
-                Point position = new Point(x, y);
-
-                Actor message = new Actor();
-                message.SetText("Game Over!");
-                message.SetPosition(position);
-                cast.AddActor("messages", message);
-
-                // make everything white
-                foreach (Actor segment in user_segments)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
-                foreach (Actor segment in program_segments)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
+                gameOver.DoGameOver(cast);
             }
         }
-
-        public bool GetGameOverStatus()
-        {
-            return isGameOver;
-        }
-
     }
 }

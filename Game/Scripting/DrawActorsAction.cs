@@ -26,7 +26,7 @@ namespace Unit05.Game.Scripting
         {
             Bike user = (Bike)cast.GetFirstActor("user");
             List<Actor> user_segments = user.GetSegments();
-            List<Actor> messages = cast.GetActors("messages");
+            List<Actor> messages = cast.GetActors("gameover");
             Bike program = (Bike)cast.GetFirstActor("program");
             List<Actor> program_segments = program.GetSegments();
 
