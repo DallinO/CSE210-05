@@ -121,11 +121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\offic\\Documents\\CSE 210\\CSE210-05\\Unit05.csproj",
+      "projectUniqueName": "C:\\Users\\offic\\Documents\\CSE 210\\CSE210-05\\CSE210-05\\Unit05.csproj",
       "projectName": "Unit05",
-      "projectPath": "C:\\Users\\offic\\Documents\\CSE 210\\CSE210-05\\Unit05.csproj",
+      "projectPath": "C:\\Users\\offic\\Documents\\CSE 210\\CSE210-05\\CSE210-05\\Unit05.csproj",
       "packagesPath": "C:\\Users\\offic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\offic\\Documents\\CSE 210\\CSE210-05\\obj\\",
+      "outputPath": "C:\\Users\\offic\\Documents\\CSE 210\\CSE210-05\\CSE210-05\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\offic\\AppData\\Roaming\\NuGet\\NuGet.Config"
