@@ -4,16 +4,13 @@ using System.Linq;
 
 namespace Unit05.Game.Casting
 {
-    /// <summary>
-    /// <para>A long limbless reptile.</para>
-    /// <para>The responsibility of Snake is to move itself.</para>
-    /// </summary>
+    // The player entity
     public class Bike : Actor
     {
         private List<Actor> segments = new List<Actor>();
 
         /// <summary>
-        /// Constructs a new instance of a Snake.
+        /// Constructs a new instance of a Bike.
         /// </summary>
         public Bike(int x, int y, Color a)
         {
@@ -30,7 +27,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
-        /// Gets the snake's body segments.
+        /// Gets the bike's body segments.
         /// </summary>
         /// <returns>The body segments in a List.</returns>
         public List<Actor> GetBody()
@@ -39,7 +36,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
-        /// Gets the snake's head segment.
+        /// Gets the bike head segment.
         /// </summary>
         /// <returns>The head segment as an instance of Actor.</returns>
         public Actor GetHead()
@@ -48,7 +45,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
-        /// Gets the snake's segments (including the head).
+        /// Gets the bike trail segments (including the head).
         /// </summary>
         /// <returns>A list of snake segments as instances of Actors.</returns>
         public List<Actor> GetSegments()
@@ -57,7 +54,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
-        /// Grows the snake's tail by the given number of segments.
+        /// Grows the bike trail by the given number of segments.
         /// </summary>
         /// <param name="numberOfSegments">The number of segments to grow.</param>
         public void GrowTail(Color color)
@@ -93,7 +90,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
-        /// Turns the head of the snake in the given direction.
+        /// Turns the head of the bike in the given direction.
         /// </summary>
         /// <param name="velocity">The given direction.</param>
         public void TurnHead(Point direction)

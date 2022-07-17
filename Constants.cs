@@ -4,12 +4,7 @@ using Unit05.Game.Casting;
 
 namespace Unit05.Game
 {
-    /// <summary>
-    /// <para>A tasty item that snakes like to eat.</para>
-    /// <para>
-    /// The responsibility of Food is to select a random position and points that it's worth.
-    /// </para>
-    /// </summary>
+    // holds constant values
     public class Constants
     {
         public static int COLUMNS = 40;

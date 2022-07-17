@@ -8,33 +8,32 @@ using Unit05.Game;
 
 namespace Unit05
 {
-    /// <summary>
-    /// The program's entry point.
-    /// </summary>
+    // The program's entry point.
     class Program
     {
-        /// <summary>
-        /// Starts the program using the given arguments.
-        /// </summary>
-        /// <param name="args">The given arguments.</param>
+        // Starts the program using the given arguments.
         static void Main(string[] args)
         {
             // create the cast
             Cast cast = new Cast();
+
+            // add actors
             Color color = Constants.BLUE;
             int x = 300;
             int y = 450;
-
             cast.AddActor("user", new Bike(x, y, color));
+
             color = Constants.RED;
             x = 600;
             y = 150;
             cast.AddActor("program", new Bike(x, y, color));
 
+            cast.AddActor("gameover", new GameOver());
+
             // create the services
             KeyboardService keyboardService = new KeyboardService();
             VideoService videoService = new VideoService(false);
-           
+
             // create the script
             Script script = new Script();
             script.AddAction("input", "CAA", new ControlActorsAction(keyboardService));
