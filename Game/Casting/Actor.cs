@@ -89,27 +89,7 @@ namespace Unit05.Game.Casting
         /// <exception cref="ArgumentException">When color is null.</exception>
         public void SetColor(Color color)
         {
-            if (color == null)
-            {
-                throw new ArgumentException("color can't be null");
-            }
             this.color = color;
-        }
-
-        /// <summary>
-        /// Sets the actor's font size to the given value.
-        /// </summary>
-        /// <param name="fontSize">The given font size.</param>
-        /// <exception cref="ArgumentException">
-        /// When font size is less than or equal to zero.
-        /// </exception>
-        public void SetFontSize(int fontSize)
-        {
-            if (fontSize <= 0)
-            {
-                throw new ArgumentException("fontSize must be greater than zero");
-            }
-            this.fontSize = fontSize;
         }
 
         /// <summary>
