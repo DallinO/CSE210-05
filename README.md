@@ -1,7 +1,10 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
+# Tron
+Use the trail of your light bike to cut off your opponant and cause them
+to collide with your trail.
+
+## How To Play
+One player uses the 'awsd' keys and the other uses 'jikl'. The key
+positions correlate to the movement direction. The speed is maintained.
 
 ---
 ## Getting Started
@@ -22,7 +25,7 @@ arrow or "start debugging" button.
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- Game                (source code folder)
++-- Game                (class source code folder)
 +-- Program.cs          (program entry point)    
 +-- README.md           (general info)
 +-- Unit04.csproj       (dotnet project file)
@@ -33,5 +36,4 @@ root                    (project root folder)
 * raylib-cs 3.7.0.1
 
 ## Authors
-* Matt Manley (manleym@byui.edu)
-* Scott Burton (burtons@byui.edu)
+* Dallin Olson
